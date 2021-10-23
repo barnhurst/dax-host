@@ -6,21 +6,27 @@ import Navigation from './Navigation';
 import HostForm from './HostForm';
 import Hosts from './Hosts';
 import Host from './Host';
+import {MyProvider} from "./MyContext";
+
+const children = () => {
+    return (
+        <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/hosts" component={Hosts} />
+            <Route exact path="/hosts/new" component={HostForm} />
+            <Route path='/hosts/:id' component={Host} />
+        </Switch>
+    )
+}
 
 const App = () =>{
   return (
     <Router>
       <Navigation />
       <div className="App">
-      <Switch>
+          <MyProvider children={children}>
 
-            <Route exact path="/" component={Home} />
-            <Route exact path="/hosts" component={Hosts} />
-            <Route exact path="/hosts/new" component={HostForm} />
-            <Route path='/hosts/:id' component={Host} />
-
-
-      </Switch>
+          </MyProvider>
       </div>
     </Router>
   )

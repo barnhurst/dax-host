@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import MyContext from './MyContext';
+import { MyConsumer } from './MyContext';
 
 const HostForm = (props) =>{
     const [host, setHost] = useState({
@@ -8,7 +8,7 @@ const HostForm = (props) =>{
         gender: ""
     }) 
     return (
-        <MyContext.Consumer>
+        <MyConsumer>
             {context =>  {
                 const handleChange = (e) => {
                     setHost(
@@ -41,7 +41,7 @@ const HostForm = (props) =>{
                     </div>
                 )}
             }
-        </MyContext.Consumer>
+        </MyConsumer>
     )
 }
 

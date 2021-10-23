@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
-const MyContext = React.createContext();
+const MyContext = React.createContext({ host: [] });
 
-export default MyContext;
+const API_URL = "http://localhost:3001/hosts"; // Name variables as CAPITOL_CASE when defining constants (Never change throughout lifecycle of application)
 
 const MyProvider = (props) => {
     const [hosts, setHosts] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:3001/daxHosts")
+        fetch(API_URL)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -17,29 +17,28 @@ const MyProvider = (props) => {
     }, [])
 
     const addHost = (host) => {
-       
-        fetch("http://localhost:3001/daxHosts", {
+        console.log(host)
+        fetch(API_URL, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(host) 
+            body: JSON.stringify(host)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            setHosts([...hosts, data])
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setHosts([...hosts, data])
+            })
     }
 
-    return (<MyContext.Provider value={{
-            hosts: hosts, 
-         addHost: addHost
-        }}>{props.children}
-        </MyContext.Provider>)
-    
+    return (
+        <MyContext.Provider value={{hosts, addHost}}>
+            {props.children()}
+        </MyContext.Provider>
+    )
 }
 
 const MyConsumer = MyContext.Consumer
 
-export  { MyProvider, MyConsumer };
+export { MyProvider, MyConsumer };
