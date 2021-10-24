@@ -1,14 +1,14 @@
 import React from 'react'
-import MyContext from './MyContext';
+import { MyConsumer } from './MyContext';
 import NewButton from './NewButton'
 import HostLink from './HostLink'
 
 const Hosts= () => {
     return (
-        
-        <MyContext.Consumer>
+        <MyConsumer>
         {context => {
-               const hostList = context.hosts.map(h => <HostLink key={h.id} host={h} />)
+            console.log(context)
+               const hostList = context.hosts?.map(h => <HostLink key={h.id} host={h} />)
                 return(
                     <div>
                         <h3>Dax Hosts</h3> 
@@ -21,7 +21,7 @@ const Hosts= () => {
                 )
             }
         }
-        </MyContext.Consumer>
+        </MyConsumer>
     )
 }
 

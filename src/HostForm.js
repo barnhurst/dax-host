@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import MyContext from './MyContext';
+import { MyConsumer } from './MyContext';
 
 const HostForm = (props) =>{
     const [host, setHost] = useState({
-        hostName: "",
+        name: "",
         dateOfDeath: "",
         gender: ""
     }) 
     return (
-        <MyContext.Consumer>
+        <MyConsumer>
             {context =>  {
                 const handleChange = (e) => {
                     setHost(
@@ -19,7 +19,7 @@ const HostForm = (props) =>{
                 const handleSubmit = (e) => {
                     e.preventDefault()
                     const newHost = {
-                        hostName: host.hostName,
+                        name: host.name,
                         dateOfDeath: host.dateOfDeath,
                         gender: host.gender
                     }
@@ -31,7 +31,7 @@ const HostForm = (props) =>{
                         
                         <form onSubmit={handleSubmit}>
                             <label>Name:</label><br />
-                            <input name="hostName" onChange={handleChange} value={host.hostName} type="text" /><br />
+                            <input name="name" onChange={handleChange} value={host.name} type="text" /><br />
                             <label>Date of Death:</label><br />
                             <textarea name="dateOfDeath" onChange={handleChange} value={host.dateOfDeath} /><br />
                             <label>Gender:</label><br />
@@ -41,7 +41,7 @@ const HostForm = (props) =>{
                     </div>
                 )}
             }
-        </MyContext.Consumer>
+        </MyConsumer>
     )
 }
 

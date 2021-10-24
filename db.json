@@ -1,60 +1,58 @@
 {
-    "hosts": [
-        {
-            "id": 1,
-            "name": "Lela",
-            "yearOfDeath":  2226,
-            "gender": "F"
-        },
-        {
-            "id": 2,
-            "name": "Tobin",
-            "yearOfDeath":  "Unknown",
-            "gender": "M"
-        },
-        {
-            "id": 3,
-            "name": "Emony",
-            "yearOfDeath":  "Unknown",
-            "gender": "F"
-        },
-        {
-            "id": 4,
-            "name": "Audrid",
-            "yearOfDeath":  2284,
-            "gender": "F"
-        },
-        {
-            "id": 5,
-            "name": "Torias",
-            "yearOfDeath":  2285,
-            "gender": "M"
-        },
-        {
-            "id": 6,
-            "name": "Joran",
-            "yearOfDeath":  2286,
-            "gender": "M"
-        },
-        {
-            "id": 7,
-            "name": "Curzon",
-            "yearOfDeath":  2367,
-            "gender": "M"
-        },
-        {
-            "id": 8,
-            "name": "jadzia",
-            "yearOfDeath":  2375,
-            "gender": "F"
-        },
-        {
-            "id": 9,
-            "name": "Ezri",
-            "yearOfDeath":  "Unkown",
-            "gender": "F"
-        }
-    ]
-
-
+  "hosts": [
+    {
+      "id": 1,
+      "name": "Lela",
+      "yearOfDeath": 2226,
+      "gender": "F"
+    },
+    {
+      "id": 2,
+      "name": "Tobin",
+      "yearOfDeath": "Unknown",
+      "gender": "M"
+    },
+    {
+      "id": 3,
+      "name": "Emony",
+      "yearOfDeath": "Unknown",
+      "gender": "F"
+    },
+    {
+      "id": 4,
+      "name": "Audrid",
+      "yearOfDeath": 2284,
+      "gender": "F"
+    },
+    {
+      "id": 5,
+      "name": "Torias",
+      "yearOfDeath": 2285,
+      "gender": "M"
+    },
+    {
+      "id": 6,
+      "name": "Joran",
+      "yearOfDeath": 2286,
+      "gender": "M"
+    },
+    {
+      "id": 7,
+      "name": "Curzon",
+      "yearOfDeath": 2367,
+      "gender": "M"
+    },
+    {
+      "id": 8,
+      "name": "Jadzia",
+      "yearOfDeath": 2375,
+      "gender": "F"
+    },
+    {
+      "id": 9,
+      "name": "Ezri",
+      "yearOfDeath": "Unkown",
+      "gender": "F"
+    }
+  ]
 }
